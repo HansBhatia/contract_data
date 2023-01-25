@@ -91,7 +91,7 @@ const getAaveRates = async (token) => {
   // return borrow and lending rates
   const depositAPR = liquidityRate / RAY;
   const variableBorrowAPR = variableBorrowRate / RAY;
-  const stableBorrowAPR = variableBorrowRate / RAY;
+  const stableBorrowAPR = stableBorrowRate / RAY;
 
   const depositAPY = getApySeconds(depositAPR);
   const variableBorrowAPY = getApySeconds(variableBorrowAPR);
@@ -229,7 +229,7 @@ export default function Home() {
                     <Text h2>DEPOSIT APY</Text>
                   </Card.Header>
                   <Card.Body>
-                    <Text>{data.stableBorrowAPY}</Text>
+                    <Text>{data.depositAPY}</Text>
                   </Card.Body>
                 </Card>
               </Grid>
@@ -239,7 +239,7 @@ export default function Home() {
                     <Text h2>BORROW APY (variable)</Text>
                   </Card.Header>
                   <Card.Body>
-                    <Text>{data.stableBorrowAPY}</Text>
+                    <Text>{data.variableBorrowAPY}</Text>
                   </Card.Body>
                 </Card>
               </Grid>
